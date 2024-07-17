@@ -14,12 +14,11 @@ export async function POST(request: Request) {
   try {
     const text = await request.text();
 
-    if (isValidNgsiLdPayload(text)) {
-      console.log(text);
-      return new Response("Payload processed", { status: 200 });
-    } else {
-      return new Response("Invalid NGSI-ld payload", { status: 400 });
-    }
+    // if (!isValidNgsiLdPayload(text)) {
+    //   return new Response("Invalid NGSI-ld payload", { status: 400 });
+    // } 
+    console.log(text);
+    return new Response("Payload processed", { status: 200 });
   } catch (error) {
     console.error("Error processing request:", error);
     return new Response("Internal Server Error", { status: 500 });
