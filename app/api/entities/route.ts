@@ -21,7 +21,7 @@ async function handler(): Promise<NextResponse> {
   }
 }
 
-export default async function GET(): Promise<NextResponse> {
+export async function GET(): Promise<NextResponse> {
     console.log("GET /api/anysolution/v2/entities");
   return handler();
 }
